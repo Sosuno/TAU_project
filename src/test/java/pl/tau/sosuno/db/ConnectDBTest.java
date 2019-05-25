@@ -25,6 +25,11 @@ public class ConnectDBTest {
         assertNotNull(con);
     }
 
+    @Test
+    public void ConnectionTest() {
+        ConnectDB con = new ConnectDB();
+        assertNotNull(con.getCon());
+    }
 
 
 }
