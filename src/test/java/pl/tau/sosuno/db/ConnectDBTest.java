@@ -21,7 +21,7 @@ public class ConnectDBTest {
 
     @Test
     public void createConnectionDbTest() {
-        ConnectDb con = new ConnectDb();
+        ConnectDB con = new ConnectDB();
         assertNotNull(con);
     }
 
