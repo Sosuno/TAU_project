@@ -74,4 +74,24 @@ public class Book {
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+    public String getAuthorsToString() {
+        return arrToString(authors);
+
+    }
+    public String getGenresToString() {
+        return arrToString(genres);
+    }
+
+    private String arrToString(String[] arr) {
+        StringBuilder toString = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            toString.append(arr[i]);
+            if(i != arr.length-1){
+                toString.append(", ");
+            }
+        }
+        return toString.toString();
+    }
+
 }
