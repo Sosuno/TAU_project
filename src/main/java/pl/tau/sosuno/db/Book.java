@@ -1,16 +1,16 @@
-package pl.tau.sosuno.db.DAO;
+package pl.tau.sosuno.db;
 
-public class BookDao {
+public class Book {
     private String title;
     private String[] authors;
     private int year;
     private String[] genres;
     private String publisher;
 
-    public BookDao() {
+    public Book() {
     }
 
-    public BookDao(String title, String[] authors, int year, String[] genres, String publisher) {
+    public Book(String title, String[] authors, int year, String[] genres, String publisher) {
         this.title = title;
         this.authors = authors;
         this.year = year;

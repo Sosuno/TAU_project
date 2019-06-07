@@ -1,4 +1,4 @@
-package pl.tau.sosuno.db.DAO;
+package pl.tau.sosuno.db;
 
 import static org.junit.Assert.*;
 
@@ -6,42 +6,39 @@ import org.junit.*;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import pl.tau.sosuno.db.ConnectDB;
 
 import java.sql.SQLException;
 
 
 @RunWith(JUnit4.class)
-public class BookDaoTest {
+public class BookTest {
 
-
+    long id = 123456;
     String[] authors = {"Neil Gaiman", "Terry Pratchett"};
     String title = "Good Omens";
     int year = 2010;
     String[] genres = {"Comedy", "Supernatural"};
     String publisher = "whoKnows";
-    BookDao book;
+    Book book;
 
-    @Before
-    public void setup() throws SQLException {
-        ConnectDB con = new ConnectDB();
-
-    }
 
     @Test
     public void createConnectionDbTest() {
-        book = new BookDao();
+        book = new Book();
         assertNotNull(book);
     }
 
     @Test
     public void BookSettersAndGettersTest() {
+        book = new Book();
+        book.setId(id);
         book.setTitle(title);
         book.setAuthors(authors);
         book.setYear(year);
         book.setGenres(genres);
         book.setPublisher(publisher);
 
+        assertEquals(id, book.getId());
         assertEquals(title, book.getTitle());
         assertArrayEquals(authors, book.getAuthors());
         assertEquals(year, book.getYear());
@@ -51,9 +48,14 @@ public class BookDaoTest {
 
     @Test
     public void CreateBookWithConstructor() {
-
-        BookDao book2 = new BookDao(title, authors, year, genre, publisher);
-        assertNotNull(book2);
+        book = new Book(id, title, authors, year, genres, publisher);
+        assertNotNull(book);
+        assertEquals(id, book.getId());
+        assertEquals(title, book.getTitle());
+        assertArrayEquals(authors, book.getAuthors());
+        assertEquals(year, book.getYear());
+        assertArrayEquals(genres, book.getGenres());
+        assertEquals(publisher, book.getPublisher());
     }
 
 
