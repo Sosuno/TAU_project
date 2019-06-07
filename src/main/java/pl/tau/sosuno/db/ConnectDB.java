@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class ConnectDB {
 
     private static Connection con = null;
@@ -17,7 +18,7 @@ public class ConnectDB {
         String username = "root";
         String password = "admin";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+           // Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, username,password);
             if(con == null) System.out.println("Connection failed");
         } catch (SQLException e) {
