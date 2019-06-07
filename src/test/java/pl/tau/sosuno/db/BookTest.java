@@ -58,5 +58,17 @@ public class BookTest {
         assertEquals(publisher, book.getPublisher());
     }
 
+    @Test
+    public void getAuthorsToStringTest() {
+        book = new Book(id, title, authors, year, genres, publisher);
+        assertEquals("Neil Gaiman, Terry Pratchett", book.getAuthorsToString());
+
+    }
+
+    @Test
+    public void getGenresToStringTest() {
+        book = new Book(id, title, authors, year, genres, publisher);
+        assertEquals("Comedy, Supernatural", book.getGenresToString());
+    }
 
 }
