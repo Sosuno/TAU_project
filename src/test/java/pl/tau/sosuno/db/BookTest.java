@@ -13,13 +13,13 @@ import java.sql.SQLException;
 @RunWith(JUnit4.class)
 public class BookTest {
 
-    long id = 123456;
-    String[] authors = {"Neil Gaiman", "Terry Pratchett"};
-    String title = "Good Omens";
-    int year = 2010;
-    String[] genres = {"Comedy", "Supernatural"};
-    String publisher = "whoKnows";
-    Book book;
+    private long id = 123456;
+    private String[] authors = {"Neil Gaiman", "Terry Pratchett"};
+    private String title = "Good Omens";
+    private int year = 2010;
+    private String[] genres = {"Comedy", "Supernatural"};
+    private String publisher = "whoKnows";
+    private Book book;
 
 
     @Test

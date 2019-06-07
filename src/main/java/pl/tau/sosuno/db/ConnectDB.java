@@ -9,7 +9,7 @@ public class ConnectDB {
 
     private static Connection con = null;
 
-    public static Connection getCon() throws Exception {
+    public static Connection getCon()  {
 
         if(con != null) {
             return con;

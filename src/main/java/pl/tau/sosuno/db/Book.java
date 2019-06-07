@@ -19,6 +19,13 @@ public class Book {
         this.genres = genres;
         this.publisher = publisher;
     }
+    public Book(String title, String[] authors, int year, String[] genres, String publisher) {
+        this.title = title;
+        this.authors = authors;
+        this.year = year;
+        this.genres = genres;
+        this.publisher = publisher;
+    }
 
     public long getId() {
         return id;
