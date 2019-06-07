@@ -11,8 +11,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.*;
 
 public class BookDAOTest {
 
@@ -88,22 +89,35 @@ public class BookDAOTest {
 
     @Test
     public void getAll() {
-        List <Book> books = bookManager.getAll();
+        List<Book> books = bookManager.getAll();
+        System.out.println(books.toString());
         assertEquals(expectedDbState.size(),books.size());
+     //   assertThat(books, equalTo(expectedDbState));
     }
 
     @Test
     public void testSave(){
-
+        Book book = new Book(title, authors, year, genres, publisher);
+        long key = bookManager.save(book);
+        Book book1 = (Book) bookManager.get(key).get();
+        assertThat(book1, equalTo(book));
     }
 
     @Test
     public void testUpdate(){
-
+        Book book = expectedDbState.get(1);
+        book.setYear(2014);
+        Book book1 = bookManager.update(book);
+        assertEquals(book, book1);
+        assertNotEquals(expectedDbState.get(1), book1);
     }
 
     @Test
     public void testDelete(){
+        assertNotNull(bookManager.get(expectedDbState.get(1).getId()));
+        Book book = expectedDbState.get(1);
+        bookManager.delete(book);
+        assertNull(bookManager.get(expectedDbState.get(1).getId()));
 
     }
 
