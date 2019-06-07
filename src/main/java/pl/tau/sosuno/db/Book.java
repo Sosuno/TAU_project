@@ -19,6 +19,14 @@ public class Book {
         this.genres = genres;
         this.publisher = publisher;
     }
+    public Book(long id, String title, String authors, int year, String genres, String publisher) {
+        this.id = id;
+        this.title = title;
+        this.authors = strToArr(authors);
+        this.year = year;
+        this.genres = strToArr(genres);
+        this.publisher = publisher;
+    }
     public Book(String title, String[] authors, int year, String[] genres, String publisher) {
         this.title = title;
         this.authors = authors;
@@ -93,5 +101,16 @@ public class Book {
         }
         return toString.toString();
     }
+
+    private String[] strToArr(String str){
+         String[] arr;
+
+         arr = str.split(",");
+             for (int i = 0; i < arr.length; i++) {
+                 arr[i] = arr[i].trim();
+             }
+        return arr;
+    }
+
 
 }
