@@ -1,6 +1,7 @@
 package pl.tau.sosuno.db;
 
 public class Book {
+    private long id;
     private String title;
     private String[] authors;
     private int year;
@@ -10,12 +11,21 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String[] authors, int year, String[] genres, String publisher) {
+    public Book(long id, String title, String[] authors, int year, String[] genres, String publisher) {
+        this.id = id;
         this.title = title;
         this.authors = authors;
         this.year = year;
         this.genres = genres;
         this.publisher = publisher;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
