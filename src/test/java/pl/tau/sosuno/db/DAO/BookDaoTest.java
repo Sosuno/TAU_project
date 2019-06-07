@@ -18,7 +18,7 @@ public class BookDaoTest {
     String[] authors = {"Neil Gaiman", "Terry Pratchett"};
     String title = "Good Omens";
     int year = 2010;
-    String[] genre = {"Comedy", "Supernatural"};
+    String[] genres = {"Comedy", "Supernatural"};
     String publisher = "whoKnows";
     BookDao book;
 
@@ -35,10 +35,26 @@ public class BookDaoTest {
     }
 
     @Test
+    public void BookSettersAndGettersTest() {
+        book.setTitle(title);
+        book.setAuthors(authors);
+        book.setYear(year);
+        book.setGenres(genres);
+        book.setPublisher(publisher);
+
+        assertEquals(title, book.getTitle());
+        assertArrayEquals(authors, book.getAuthors());
+        assertEquals(year, book.getYear());
+        assertArrayEquals(genres, book.getGenres());
+        assertEquals(publisher, book.getPublisher());
+    }
+
+    @Test
     public void CreateBookWithConstructor() {
 
         BookDao book2 = new BookDao(title, authors, year, genre, publisher);
         assertNotNull(book2);
     }
+
 
 }
