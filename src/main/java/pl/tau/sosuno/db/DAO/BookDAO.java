@@ -5,6 +5,7 @@ import pl.tau.sosuno.db.Book;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,7 +43,21 @@ public class BookDAO implements DAO<Book> {
 
     @Override
     public List<Book> getAll() {
-        return null;
+        List books = new ArrayList();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM Book");
+
+            rs = query.executeQuery();
+            while (rs.next()) {
+                Book book = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("authors"),
+                        rs.getInt("year"), rs.getString("genres"), rs.getString("publisher"));
+                books.add(book);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return books;
     }
 
     @Override
