@@ -6,9 +6,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasSize;
 
 import static org.hamcrest.Matchers.is;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
@@ -149,7 +147,7 @@ public class BookControllerTest {
 
     @Test(expected = NullPointerException.class)
     public void deleteTest() throws Exception {
-        this.mockMvc.perform(delete("/book/{id}",expectedDbState.get(0).getId())).andDo(print())
+        this.mockMvc.perform(delete("/book/{int}",expectedDbState.get(0).getId())).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string("deleted"));
         service.get(expectedDbState.get(0).getId());
@@ -162,12 +160,10 @@ public class BookControllerTest {
         int year = 2010;
         String[] genres = {"War", "Comedy"};
         String publisher = "xyz";
-        this.mockMvc.perform(post("/book/add/{book}")
-                .param("title", title)
-                .param("authors", authors)
-                .param("year", year +"")
-                .param("genres", genres)
-                .param("publisher", publisher))
+        Book book = new Book (title, authors,year,genres,publisher);
+        this.mockMvc.perform(post("/book/add")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(asJsonString(book)))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("title", is(title)))
                 .andExpect(jsonPath("authors", is(arrToList(authors))))
@@ -181,13 +177,15 @@ public class BookControllerTest {
         String publisher = "xyz";
         Book book = expectedDbState.get(1);
         book.setPublisher(publisher);
-        this.mockMvc.perform(post("/book/{book}")
-                .param("id", book.getId() +"")
-                .param("title", book.getTitle())
-                .param("authors", book.getAuthors())
-                .param("year", book.getYear()+"")
-                .param("genres", book.getGenres())
-                .param("publisher", book.getPublisher()))
+        this.mockMvc.perform(post("/book/update")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(asJsonString(book)))
+              //  .param("id", book.getId() +"")
+             //   .param("title", book.getTitle())
+              //  .param("authors", book.getAuthors())
+              //  .param("year", book.getYear()+"")
+              //  .param("genres", book.getGenres())
+              //  .param("publisher", book.getPublisher()))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("id", is((int)book.getId())))
                 .andExpect(jsonPath("title", is(book.getTitle())))
@@ -196,5 +194,23 @@ public class BookControllerTest {
                 .andExpect(jsonPath("genres", is(arrToList(book.getGenres()))))
                 .andExpect(jsonPath("publisher", is(book.getPublisher())));
 
+    }
+
+    @Test
+    public void wrongRequestTest() throws Exception{
+        this.mockMvc.perform(delete("/books/{int}", 5)).andDo(print()).andExpect(status().isMethodNotAllowed());
+        this.mockMvc.perform(delete("/books")).andDo(print()).andExpect(status().isMethodNotAllowed());
+
+    }
+
+    public static String asJsonString(final Object obj) {
+        try {
+            final ObjectMapper mapper = new ObjectMapper();
+            final String jsonContent = mapper.writeValueAsString(obj);
+            System.out.println(jsonContent);
+            return jsonContent;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
