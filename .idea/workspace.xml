@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4a083d4b-d124-416c-afd3-c5dcfbd24eb8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/REST/servlets/BooksController.java" afterPath="$PROJECT_DIR$/src/main/java/REST/servlets/BooksController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,15 +55,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookControllerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BookControllerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="196" column="5" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="196" selection-end-column="5" />
+            <state relative-caret-position="1479">
+              <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
                 <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,8 +106,8 @@
       <file leaf-file-name="BookTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/BookTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+            <state relative-caret-position="367">
+              <caret line="71" column="5" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="71" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/BookDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/REST/servlets/BooksController.java" />
         <option value="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java" />
       </list>
     </option>
   </component>
@@ -302,35 +313,6 @@
               <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pl" type="462c0819:PsiDirectoryNode" />
-              <item name="tau" type="462c0819:PsiDirectoryNode" />
-              <item name="sosuno" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="REST" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="REST" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -377,35 +359,6 @@
               <item name="tau" type="462c0819:PsiDirectoryNode" />
               <item name="sosuno" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pl" type="462c0819:PsiDirectoryNode" />
-              <item name="tau" type="462c0819:PsiDirectoryNode" />
-              <item name="sosuno" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="REST" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="REST" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -608,7 +561,7 @@
       <updated>1558783412774</updated>
       <workItem from="1558783419414" duration="5787000" />
       <workItem from="1559905446296" duration="29247000" />
-      <workItem from="1559987679442" duration="20243000" />
+      <workItem from="1559987679442" duration="22871000" />
     </task>
     <servers />
   </component>
@@ -621,7 +574,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55277000" />
+    <option name="totallyTimeSpent" value="57905000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1216" extended-state="6" />
@@ -850,16 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/BookTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
@@ -913,12 +856,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="196" column="5" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="196" selection-end-column="5" />
+        <state relative-caret-position="1479">
+          <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
             <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/BookTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
