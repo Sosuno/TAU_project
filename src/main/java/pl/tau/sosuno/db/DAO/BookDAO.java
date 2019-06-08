@@ -21,7 +21,7 @@ public class BookDAO implements DAO<Book> {
     public Optional<Book> get(long id) {
         Book book = null;
         try {
-            PreparedStatement query = connection.prepareStatement("SELECT * FROM Book Where id = ?");
+            query = connection.prepareStatement("SELECT * FROM Book Where id = ?");
 
             query.setLong(1,id);
             rs = query.executeQuery();
@@ -43,7 +43,7 @@ public class BookDAO implements DAO<Book> {
     public List<Book> getAll() {
         List books = new ArrayList();
         try {
-            PreparedStatement query = connection.prepareStatement("SELECT * FROM Book");
+            query = connection.prepareStatement("SELECT * FROM Book");
 
             rs = query.executeQuery();
             while (rs.next()) {
@@ -61,7 +61,7 @@ public class BookDAO implements DAO<Book> {
     @Override
     public Long save(Book book) {
         try {
-            PreparedStatement query = connection.prepareStatement("INSERT INTO Book (title, authors, year, genres, publisher) VALUES (?, ?, ?, ?, ?)",
+            query = connection.prepareStatement("INSERT INTO Book (title, authors, year, genres, publisher) VALUES (?, ?, ?, ?, ?)",
             Statement.RETURN_GENERATED_KEYS);
 
             query.setString(1, book.getTitle());
@@ -86,7 +86,7 @@ public class BookDAO implements DAO<Book> {
     public Book update(Book book) {
 
         try {
-            PreparedStatement query = connection.prepareStatement("UPDATE Book SET title = ?, authors = ?, year = ?, genres = ?, publisher =? WHERE id = ?");
+            query = connection.prepareStatement("UPDATE Book SET title = ?, authors = ?, year = ?, genres = ?, publisher =? WHERE id = ?");
             query.setString(1, book.getTitle());
             query.setString(2, book.getAuthorsToString());
             query.setInt(3, book.getYear());
@@ -105,12 +105,31 @@ public class BookDAO implements DAO<Book> {
     @Override
     public void delete(Book book) {
         try {
-            PreparedStatement query = connection.prepareStatement("DELETE FROM BOOK WHERE id = ?");
+            query = connection.prepareStatement("DELETE FROM BOOK WHERE id = ?");
             query.setLong(1, book.getId());
             query.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public List<Book> getSome(int limit) {
+        List books = new ArrayList();
+        try {
+            query = connection.prepareStatement("SELECT * FROM Book LIMIT ?");
+            query.setInt(1, limit);
+            rs = query.executeQuery();
+            while (rs.next()) {
+                Book book = new Book(rs.getInt("id"), rs.getString("title"), rs.getString("authors"),
+                        rs.getInt("year"), rs.getString("genres"), rs.getString("publisher"));
+                books.add(book);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return books;
     }
 }

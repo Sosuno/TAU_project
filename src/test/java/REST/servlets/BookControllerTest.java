@@ -89,17 +89,26 @@ public class BookControllerTest {
         }
     }
 
+    public List<String> arrToList(String[] arr) {
+        List<String> list = new ArrayList<>();
+
+        for (String str : arr){
+            list.add(str);
+        }
+        return list;
+    }
     @Test
     public void shouldReturnBookList() throws Exception {
+        List <Book> books = service.getAll();
         this.mockMvc.perform(get("/books")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$", hasSize(10)))
-                .andExpect(jsonPath("$[0].id", is(service.getAll().get(1).getId())))
-                .andExpect(jsonPath("$[0].title", is(service.getAll().get(1).getTitle())))
-                .andExpect(jsonPath("$[0].authors", is(service.getAll().get(1).getAuthors())))
-                .andExpect(jsonPath("$[0].year", is(service.getAll().get(1).getYear())))
-                .andExpect(jsonPath("$[0].genres", is(service.getAll().get(1).getGenres())))
-                .andExpect(jsonPath("$[0].publisher", is(service.getAll().get(1).getPublisher())));
+                .andExpect(jsonPath("$[0].id", is((int)books.get(0).getId())))
+                .andExpect(jsonPath("$[0].title", is(books.get(0).getTitle())))
+                .andExpect(jsonPath("$[0].authors", is(arrToList(books.get(0).getAuthors()))))
+                .andExpect(jsonPath("$[0].year", is(books.get(0).getYear())))
+                .andExpect(jsonPath("$[0].genres", is(arrToList(books.get(0).getGenres()))))
+                .andExpect(jsonPath("$[0].publisher", is(books.get(0).getPublisher())));
     }
 
     @Test
@@ -107,31 +116,31 @@ public class BookControllerTest {
         Book book = expectedDbState.get(1);
         this.mockMvc.perform(get("/book/{id}", book.getId())).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].id", is(book.getId())))
-                .andExpect(jsonPath("$[0].title", is(book.getTitle())))
-                .andExpect(jsonPath("$[0].authors", is(book.getAuthors())))
-                .andExpect(jsonPath("$[0].year", is(book.getYear())))
-                .andExpect(jsonPath("$[0].genres", is(book.getGenres())))
-                .andExpect(jsonPath("$[0].publisher", is(book.getPublisher())));
+                .andExpect(jsonPath("id", is((int)book.getId())))
+                .andExpect(jsonPath("title", is(book.getTitle())))
+                .andExpect(jsonPath("authors", is(arrToList(book.getAuthors()))))
+                .andExpect(jsonPath("year", is(book.getYear())))
+                .andExpect(jsonPath("genres", is(arrToList(book.getGenres()))))
+                .andExpect(jsonPath("publisher", is(book.getPublisher())));
     }
 
     @Test
     public void shouldReturnNoOfBooks() throws Exception {
+        List <Book> books = service.getSome(5);
         this.mockMvc.perform(get("/books/{int}", 5)).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$", hasSize(5)))
-                .andExpect(jsonPath("$[0].id", is(service.getSome(5).get(1).getId())))
-                .andExpect(jsonPath("$[0].title", is(service.getSome(5).get(1).getTitle())))
-                .andExpect(jsonPath("$[0].authors", is(service.getSome(5).get(1).getAuthors())))
-                .andExpect(jsonPath("$[0].year", is(service.getSome(5).get(1).getYear())))
-                .andExpect(jsonPath("$[0].genres", is(service.getSome(5).get(1).getGenres())))
-                .andExpect(jsonPath("$[0].publisher", is(service.getSome(5).get(1).getPublisher())));
+                .andExpect(jsonPath("$[0].id", is((int)books.get(0).getId())))
+                .andExpect(jsonPath("$[0].title", is(books.get(0).getTitle())))
+                .andExpect(jsonPath("$[0].authors", is(arrToList(books.get(0).getAuthors()))))
+                .andExpect(jsonPath("$[0].year", is(books.get(0).getYear())))
+                .andExpect(jsonPath("$[0].genres", is(arrToList(books.get(0).getGenres()))))
+                .andExpect(jsonPath("$[0].publisher", is(books.get(0).getPublisher())));
     }
 
     @Test
     public void shouldReturn404() throws Exception {
-        this.mockMvc.perform(get("/books/id")).andDo(print()).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/books/id")).andDo(print()).andExpect(status().isBadRequest());
 
     }
 }

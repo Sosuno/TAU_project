@@ -123,7 +123,7 @@ public class BookDAOTest {
 
     @Test
     public void getSomeTest() {
-        assertEquals(bookManager.getSome(5), equals(5));
+        assertEquals(bookManager.getSome(5).size(),5);
     }
 
 

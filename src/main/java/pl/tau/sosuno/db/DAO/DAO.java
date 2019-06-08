@@ -9,6 +9,8 @@ public interface DAO<T> {
 
     List<T> getAll();
 
+    List<T> getSome(int limit);
+
     Long save(T t);
 
     T update(T t);
