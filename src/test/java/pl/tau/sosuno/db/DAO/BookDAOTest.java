@@ -8,13 +8,10 @@ import pl.tau.sosuno.db.ConnectDB;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Optional;
-import org.hamcrest.beans.SamePropertyValuesAs;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
-
 import static org.hamcrest.beans.SamePropertyValuesAs.samePropertyValuesAs;
 import static org.junit.Assert.*;
 
@@ -122,6 +119,11 @@ public class BookDAOTest {
         bookManager.delete(book);
         assertNull(bookManager.get(expectedDbState.get(1).getId()));
 
+    }
+
+    @Test
+    public void getSomeTest() {
+        assertEquals(bookManager.getSome(5).size(),5);
     }
 
 
