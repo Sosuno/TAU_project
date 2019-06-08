@@ -6,7 +6,9 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasSize;
 
 import static org.hamcrest.Matchers.is;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
@@ -14,6 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +43,7 @@ public class BookControllerTest {
     List<Book> expectedDbState;
     @Autowired
     private MockMvc mockMvc;
-
+    private ObjectMapper objectMapper;
     @MockBean
     private BookDAO service;
 
@@ -141,6 +144,57 @@ public class BookControllerTest {
     @Test
     public void shouldReturn404() throws Exception {
         this.mockMvc.perform(get("/books/id")).andDo(print()).andExpect(status().isBadRequest());
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void deleteTest() throws Exception {
+        this.mockMvc.perform(delete("/book/{id}",expectedDbState.get(0).getId())).andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string("deleted"));
+        service.get(expectedDbState.get(0).getId());
+    }
+
+    @Test
+    public void insertTest() throws Exception {
+        String title = "Catch-22";
+        String[] authors = {"Joseph Heller"};
+        int year = 2010;
+        String[] genres = {"War", "Comedy"};
+        String publisher = "xyz";
+        this.mockMvc.perform(post("/book/add/{book}")
+                .param("title", title)
+                .param("authors", authors)
+                .param("year", year +"")
+                .param("genres", genres)
+                .param("publisher", publisher))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("title", is(title)))
+                .andExpect(jsonPath("authors", is(arrToList(authors))))
+                .andExpect(jsonPath("year", is(year)))
+                .andExpect(jsonPath("genres", is(arrToList(genres))))
+                .andExpect(jsonPath("publisher", is(publisher)));
+    }
+
+    @Test
+    public void updateTest() throws Exception {
+        String publisher = "xyz";
+        Book book = expectedDbState.get(1);
+        book.setPublisher(publisher);
+        this.mockMvc.perform(post("/book/{book}")
+                .param("id", book.getId() +"")
+                .param("title", book.getTitle())
+                .param("authors", book.getAuthors())
+                .param("year", book.getYear()+"")
+                .param("genres", book.getGenres())
+                .param("publisher", book.getPublisher()))
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("id", is((int)book.getId())))
+                .andExpect(jsonPath("title", is(book.getTitle())))
+                .andExpect(jsonPath("authors", is(arrToList(book.getAuthors()))))
+                .andExpect(jsonPath("year", is(book.getYear())))
+                .andExpect(jsonPath("genres", is(arrToList(book.getGenres()))))
+                .andExpect(jsonPath("publisher", is(book.getPublisher())));
 
     }
 }
