@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a083d4b-d124-416c-afd3-c5dcfbd24eb8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,125 +17,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BooksController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/REST/servlets/BooksController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#848#849#0" expanded="true" />
-                <element signature="e#892#893#0" expanded="true" />
-                <element signature="e#1093#1094#0" expanded="true" />
-                <element signature="e#1134#1135#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectDBTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/ConnectDBTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/DAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="195" column="0" lean-forward="false" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
-                <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookDAOTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/BookDAOTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="114" column="49" lean-forward="false" selection-start-line="114" selection-start-column="10" selection-end-line="114" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1560003568973" expanded="true" signature="976:1057" ph="INSERT INTO BookTest... " />
-                <marker date="1560003568973" expanded="true" signature="2283:2299" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="74" column="25" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-              <folding>
-                <element signature="e#1055#1056#0" expanded="true" />
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1134#1135#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-                <element signature="e#1288#1289#0" expanded="true" />
-                <element signature="e#1328#1329#0" expanded="true" />
-                <element signature="e#1360#1361#0" expanded="true" />
-                <element signature="e#1388#1389#0" expanded="true" />
-                <element signature="e#1430#1431#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <element signature="e#1495#1496#0" expanded="true" />
-                <element signature="e#1522#1523#0" expanded="true" />
-                <element signature="e#1562#1563#0" expanded="true" />
-                <element signature="e#1594#1595#0" expanded="true" />
-                <element signature="e#1646#1647#0" expanded="true" />
-                <element signature="e#1680#1681#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserDAOTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="143" column="31" lean-forward="true" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="31" />
+            <state relative-caret-position="316">
+              <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1560075552380" expanded="true" signature="1003:1072" ph="INSERT INTO USER... " />
-                <marker date="1560075552380" expanded="true" signature="2286:2302" ph="DELETE FROM " />
+                <marker date="1560077690217" expanded="true" signature="1003:1072" ph="INSERT INTO USER... " />
+                <marker date="1560077690217" expanded="true" signature="2286:2302" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1560077255655" expanded="true" signature="494:526" ph="SELECT * FRO... Users" />
+                <marker date="1560077255655" expanded="true" signature="1085:1104" ph="SELECT * FRO... Users" />
+                <marker date="1560077255655" expanded="true" signature="1642:1669" ph="SELECT * FRO... Users" />
+                <marker date="1560077255655" expanded="true" signature="2196:2256" ph="INSERT INTO Users... " />
+                <marker date="1560077255655" expanded="true" signature="2898:2965" ph="UPDATE Users... " />
+                <marker date="1560077255655" expanded="true" signature="3434:3464" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="113" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1560002226154" expanded="true" signature="513:544" ph="SELECT * FRO... Book" />
+                <marker date="1560002226154" expanded="true" signature="1132:1150" ph="SELECT * FRO... Book" />
+                <marker date="1560002226154" expanded="true" signature="1691:1772" ph="INSERT INTO Book... " />
+                <marker date="1560002226154" expanded="true" signature="2525:2612" ph="UPDATE Book " />
+                <marker date="1560002226154" expanded="true" signature="3199:3228" ph="DELETE FROM " />
+                <marker date="1560002226154" expanded="true" signature="3215:3228" ph="UPDATE Book " />
+                <marker date="1560002226154" expanded="true" signature="3549:3575" ph="SELECT * FRO... Book" />
               </folding>
             </state>
           </provider>
@@ -207,6 +136,7 @@
         <option value="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
       </list>
     </option>
@@ -587,7 +517,7 @@
       <workItem from="1558783419414" duration="5787000" />
       <workItem from="1559905446296" duration="29247000" />
       <workItem from="1559987679442" duration="28253000" />
-      <workItem from="1560074801657" duration="751000" />
+      <workItem from="1560074801657" duration="2887000" />
     </task>
     <servers />
   </component>
@@ -600,7 +530,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64038000" />
+    <option name="totallyTimeSpent" value="66174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1216" extended-state="6" />
@@ -659,13 +589,13 @@
         <state relative-caret-position="408">
           <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#617#618#0" expanded="false" />
+            <element signature="e#656#657#0" expanded="false" />
+            <element signature="e#848#849#0" expanded="false" />
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
+            <element signature="e#1134#1135#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,7 +623,7 @@
         <state relative-caret-position="3315">
           <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
             <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
           </folding>
@@ -774,8 +704,8 @@
           <caret line="128" column="14" lean-forward="false" selection-start-line="128" selection-start-column="14" selection-end-line="128" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1560075552380" expanded="true" signature="1003:1072" ph="INSERT INTO USER... " />
-            <marker date="1560075552380" expanded="true" signature="2286:2302" ph="DELETE FROM " />
+            <marker date="1560077690217" expanded="true" signature="1003:1072" ph="INSERT INTO USER... " />
+            <marker date="1560077690217" expanded="true" signature="2286:2302" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -784,6 +714,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="49" column="53" lean-forward="false" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -831,6 +762,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1819">
           <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1560002226154" expanded="true" signature="513:544" ph="SELECT * FRO... Book" />
+            <marker date="1560002226154" expanded="true" signature="1132:1150" ph="SELECT * FRO... Book" />
+            <marker date="1560002226154" expanded="true" signature="1691:1772" ph="INSERT INTO Book... " />
+            <marker date="1560002226154" expanded="true" signature="2525:2612" ph="UPDATE Book " />
+            <marker date="1560002226154" expanded="true" signature="3199:3228" ph="DELETE FROM " />
+            <marker date="1560002226154" expanded="true" signature="3215:3228" ph="UPDATE Book " />
+            <marker date="1560002226154" expanded="true" signature="3549:3575" ph="SELECT * FRO... Book" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -870,6 +811,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -888,13 +830,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/REST/AppTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="132" column="21" lean-forward="false" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/ConnectDBTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -918,13 +853,13 @@
         <state relative-caret-position="408">
           <caret line="40" column="34" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
-            <element signature="e#1134#1135#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#617#618#0" expanded="false" />
+            <element signature="e#656#657#0" expanded="false" />
+            <element signature="e#848#849#0" expanded="false" />
+            <element signature="e#892#893#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
+            <element signature="e#1134#1135#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -934,7 +869,7 @@
         <state relative-caret-position="2805">
           <caret line="195" column="0" lean-forward="false" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
             <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
           </folding>
@@ -1009,14 +944,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="143" column="31" lean-forward="true" selection-start-line="143" selection-start-column="31" selection-end-line="143" selection-end-column="31" />
+        <state relative-caret-position="231">
+          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="113" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1560075552380" expanded="true" signature="1003:1072" ph="INSERT INTO USER... " />
-            <marker date="1560075552380" expanded="true" signature="2286:2302" ph="DELETE FROM " />
+            <marker date="1560002226154" expanded="true" signature="513:544" ph="SELECT * FRO... Book" />
+            <marker date="1560002226154" expanded="true" signature="1132:1150" ph="SELECT * FRO... Book" />
+            <marker date="1560002226154" expanded="true" signature="1691:1772" ph="INSERT INTO Book... " />
+            <marker date="1560002226154" expanded="true" signature="2525:2612" ph="UPDATE Book " />
+            <marker date="1560002226154" expanded="true" signature="3199:3228" ph="DELETE FROM " />
+            <marker date="1560002226154" expanded="true" signature="3215:3228" ph="UPDATE Book " />
+            <marker date="1560002226154" expanded="true" signature="3549:3575" ph="SELECT * FRO... Book" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1560077255655" expanded="true" signature="494:526" ph="SELECT * FRO... Users" />
+            <marker date="1560077255655" expanded="true" signature="1085:1104" ph="SELECT * FRO... Users" />
+            <marker date="1560077255655" expanded="true" signature="1642:1669" ph="SELECT * FRO... Users" />
+            <marker date="1560077255655" expanded="true" signature="2196:2256" ph="INSERT INTO Users... " />
+            <marker date="1560077255655" expanded="true" signature="2898:2965" ph="UPDATE Users... " />
+            <marker date="1560077255655" expanded="true" signature="3434:3464" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1560077690217" expanded="true" signature="1003:1072" ph="INSERT INTO USER... " />
+            <marker date="1560077690217" expanded="true" signature="2286:2302" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

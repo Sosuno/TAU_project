@@ -61,7 +61,7 @@ public class UserDAOTest {
 
             expectedDbState.add(user);
         }
-        userManager = new BookDAO(connection);
+        userManager = new UserDAO(connection);
     }
 
     @After
@@ -123,26 +123,28 @@ public class UserDAOTest {
         userManager.save(user);
     }
 
-    @Test(expected = Exception.class)
-    public void failLoginTest(){
-        user = expectedDbState.get(1);
-        user.setPassword("wrongPass");
-        long id = userManager.login(user);
-        assertNull(id);
+    @Test
+    public void getByUsernameTest() {
+        User user2 = userManager.getBy("username", expectedDbState.get(1).getUsername());
+        assertThat(expectedDbState.get(1), is(user2));
     }
 
     @Test
-    public void testLogin() {
-        user = expectedDbState.get(1);
-        long id = userManager.login(user);
-        assertNotNull(id);
+    public void getByNonExistingUsernameTest() {
+        User user = userManager.getBy("username", "blabla");
+        assertNull(user);
     }
 
     @Test
-    public void testLogout(){
-        user = expectedDbState.get(1);
-        long id = userManager.logout(user);
-        assertNull(id);
+    public void getUserByUUIDTest() {
+        User user = userManager.getBy("UUID",  expectedDbState.get(1).getUUID());
+        assertThat(expectedDbState.get(1), is(user));
+    }
+
+    @Test
+    public void getUserByNullUUIDTest() {
+        User user = userManager.getBy("UUID", expectedDbState.get(0).getUUID());
+        assertNull(user);
     }
 
 
