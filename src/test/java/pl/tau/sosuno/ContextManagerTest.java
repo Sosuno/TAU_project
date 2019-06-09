@@ -116,4 +116,14 @@ public class ContextManagerTest {
         assertThat(u, samePropertyValuesAs(user));
 
     }
+
+    @Test
+    public void createNewUserTest(){
+        User u = new User();
+        u.setUsername("newUser");
+        u.setPassword("newPass");
+        u.setEmail("newMail@mailin.com");
+
+        User newUser = context.registerUser(u);
+    }
 }
