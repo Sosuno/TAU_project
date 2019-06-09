@@ -125,5 +125,11 @@ public class ContextManagerTest {
         u.setEmail("newMail@mailin.com");
 
         User newUser = context.registerUser(u);
+
+        assertEquals(newUser.getUsername(),"newUser");
+        assertEquals(newUser.getPassword(),"newPass");
+        assertEquals(newUser.getEmail(),"newMail@mailin.com");
+        assertNotNull(newUser.getId());
+        assertNotNull(newUser.getUUID());
     }
 }
