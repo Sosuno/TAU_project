@@ -44,8 +44,8 @@ public class UserTest {
     }
 
     @Test
-    public void CreateBookWithConstructor() {
-        user = new User(username,password,email);
+    public void CreateUserWithConstructor() {
+        user = new User(id, username,password,email);
         assertNotNull(user);
         assertEquals(id, user.getId());
         assertEquals(username,user.getUsername());

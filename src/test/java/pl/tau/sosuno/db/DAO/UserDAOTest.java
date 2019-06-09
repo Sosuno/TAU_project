@@ -33,20 +33,20 @@ public class UserDAOTest {
     public void setup() throws SQLException {
         Connection connection = ConnectDB.getCon();
         PreparedStatement query = connection.prepareStatement(
-                "INSERT INTO USER (username, password,email, uuid) VALUES (?, ?, ?, ?)",
+                "INSERT INTO USERS (username, password,email, uuid) VALUES (?, ?, ?, ?)",
                 Statement.RETURN_GENERATED_KEYS);
 
         expectedDbState = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             if(i%2 ==0) {
-                user = new User(username, password, email, uuid);
+                user = new User(username +i, password, email, uuid);
             }
             else {
-                user = new User(username, password, email, uuid2 + i);
+                user = new User(username +i, password, email, uuid2 + i);
             }
 
             try {
-                query.setString(1, user.getUsername()+i);
+                query.setString(1, user.getUsername());
                 query.setString(2, user.getPassword());
                 query.setString(3, user.getEmail());
                 query.setString(4, user.getUUID());
@@ -68,7 +68,7 @@ public class UserDAOTest {
     public void cleanup() throws SQLException{
         Connection connection = ConnectDB.getCon();
         try {
-            connection.prepareStatement("DELETE FROM USER").executeUpdate();
+            connection.prepareStatement("DELETE FROM USERS").executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -93,10 +93,10 @@ public class UserDAOTest {
 
     @Test
     public void testInsert() {
-        user = new User(username,password,email,uuid2);
+        user = new User(username,password,email,uuid);
         long key = userManager.save(user);
-        Book book1 = (Book) userManager.get(key).get();
-        assertThat(book1, samePropertyValuesAs(user));
+        User user2 = (User) userManager.get(key).get();
+        assertThat(user2, samePropertyValuesAs(user));
     }
 
     @Test(expected = NullPointerException.class)
@@ -114,36 +114,36 @@ public class UserDAOTest {
         userManager.update(user);
         User user1 = (User) userManager.get(user.getId()).get();
         assertThat(user, samePropertyValuesAs(user1));
-        assertNotEquals(expectedDbState.get(1), user1);
+       // assertNotEquals(user, user1);
     }
 
-    @Test (expected = Exception.class)
+    @Test
     public void createUserWithExistingUsername() {
         user = new User(username+1,password,email,uuid2);
-        userManager.save(user);
+        assertThat(-1l, is(userManager.save(user)));
     }
 
     @Test
     public void getByUsernameTest() {
-        User user2 = userManager.getBy("username", expectedDbState.get(1).getUsername());
-        assertThat(expectedDbState.get(1), is(user2));
+        User user2 = (User) userManager.getBy("username", expectedDbState.get(1).getUsername()).get();
+        assertThat(expectedDbState.get(1), samePropertyValuesAs(user2));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getByNonExistingUsernameTest() {
-        User user = userManager.getBy("username", "blabla");
+        User user = (User) userManager.getBy("username", "blabla").get();
         assertNull(user);
     }
 
     @Test
     public void getUserByUUIDTest() {
-        User user = userManager.getBy("UUID",  expectedDbState.get(1).getUUID());
-        assertThat(expectedDbState.get(1), is(user));
+        User user = (User) userManager.getBy("UUID",  expectedDbState.get(1).getUUID()).get();
+        assertThat(expectedDbState.get(1), samePropertyValuesAs(user));
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getUserByNullUUIDTest() {
-        User user = userManager.getBy("UUID", expectedDbState.get(0).getUUID());
+        User user = (User) userManager.getBy("UUID", expectedDbState.get(0).getUUID()).get();
         assertNull(user);
     }
 

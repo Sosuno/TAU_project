@@ -49,7 +49,7 @@ public class UserDAO implements DAO<User> {
             rs = query.executeQuery();
             while (rs.next()) {
                 User user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"),
-                        rs.getString("email"));
+                        rs.getString("email"), rs.getString("uuid"));
                 users.add(user);
             }
         }
@@ -81,37 +81,53 @@ public class UserDAO implements DAO<User> {
 
     @Override
     public Long save(User user) {
+        User user1 = null;
         try {
-            query = con.prepareStatement("INSERT INTO Users (username,password,email) VALUES (?, ?, ?)",
-                    Statement.RETURN_GENERATED_KEYS);
+            user1 = getBy("username", user.getUsername()).get();
+        }catch(NullPointerException e) {
+            e.printStackTrace();
 
-            query.setString(1, user.getUsername());
-            query.setString(2, user.getPassword());
-            query.setString(3, user.getEmail());
-            query.executeUpdate();
-            ResultSet generatedKeys = query.getGeneratedKeys();
-            if (generatedKeys.next()) {
-                user.setId(generatedKeys.getLong(1));
+        }
+
+
+        try {
+            if(user1 == null) {
+                query = con.prepareStatement("INSERT INTO Users (username,password,email,uuid) VALUES (?, ?, ?, ?)",
+                        Statement.RETURN_GENERATED_KEYS);
+
+                query.setString(1, user.getUsername());
+                query.setString(2, user.getPassword());
+                query.setString(3, user.getEmail());
+                query.setString(4, user.getUUID());
+                query.executeUpdate();
+                ResultSet generatedKeys = query.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    user.setId(generatedKeys.getLong(1));
+                }
+            }else {
+                return -1l;
             }
         }
-        catch(Exception e){
+        catch(SQLException e){
             e.printStackTrace();
         }
 
         return user.getId();
     }
 
+
     @Override
     public User update(User user) {
         try {
-            query = con.prepareStatement("UPDATE Users SET username = ?, password = ?, email = ? WHERE id = ?");
+            query = con.prepareStatement("UPDATE Users SET username = ?, password = ?, email = ?, UUID = ? WHERE id = ?");
             query.setString(1, user.getUsername());
             query.setString(2, user.getPassword());
             query.setString(3, user.getEmail());
-            query.setLong(4, user.getId());
+            query.setString(4, user.getUUID());
+            query.setLong(5, user.getId());
             query.executeUpdate();
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -130,5 +146,32 @@ public class UserDAO implements DAO<User> {
         }
 
     }
+
+    @Override
+    public Optional<User> getBy(String column, String value) {
+        User user = null;
+
+        try {
+            query = con.prepareStatement("SELECT * FROM Users Where " + column + " = ?");
+
+            query.setString(1,value);
+            rs = query.executeQuery();
+            while (rs.next()) {
+
+                user = new User(rs.getInt("id"), rs.getString("username"), rs.getString("password"),
+                        rs.getString("email"), rs.getString("uuid"));
+
+            }
+
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return Optional.of(user);
+    }
+
+
 
 }

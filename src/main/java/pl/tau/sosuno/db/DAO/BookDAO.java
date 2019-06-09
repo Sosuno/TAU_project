@@ -115,6 +115,12 @@ public class BookDAO implements DAO<Book> {
     }
 
     @Override
+    public Optional<Book> getBy(String column, String value) {
+
+        return null;
+    }
+
+    @Override
     public List<Book> getSome(int limit) {
         List books = new ArrayList();
         try {

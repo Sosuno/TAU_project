@@ -16,4 +16,6 @@ public interface DAO<T> {
     T update(T t);
 
     void delete(T t);
+
+    Optional<T> getBy(String column, String value);
 }
