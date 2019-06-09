@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a083d4b-d124-416c-afd3-c5dcfbd24eb8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/ContextManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/REST/servlets/UserControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,7 +20,7 @@
       <file leaf-file-name="UserDAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
+            <state relative-caret-position="230">
               <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -34,15 +32,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContextManagerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContextManagerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+            <state relative-caret-position="187">
+              <caret line="71" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1560090993106" expanded="true" signature="852:922" ph="INSERT INTO USERS... " />
-                <marker date="1560090993106" expanded="true" signature="2128:2145" ph="DELETE FROM " />
+                <marker date="1560091530134" expanded="true" signature="852:922" ph="INSERT INTO USERS... " />
+                <marker date="1560091530134" expanded="true" signature="2128:2145" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -51,12 +49,39 @@
       <file leaf-file-name="ContextManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/ContextManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+            <state relative-caret-position="387">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1723#1724#0" expanded="true" />
-                <element signature="e#1754#1755#0" expanded="true" />
+                <element signature="e#1676#1677#0" expanded="true" />
+                <element signature="e#1707#1708#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="189" column="65" lean-forward="true" selection-start-line="189" selection-start-column="16" selection-end-line="189" selection-end-column="65" />
+              <folding>
+                <marker date="1560092759430" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
+                <marker date="1560092759430" expanded="true" signature="3278:3294" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserControllerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/UserControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="151" column="42" lean-forward="false" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1560093066045" expanded="true" signature="1625:1695" ph="INSERT INTO USERS... " />
+                <marker date="1560093066045" expanded="true" signature="2901:2918" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -65,7 +90,7 @@
       <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="132">
               <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -128,7 +153,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/Book.java" />
         <option value="$PROJECT_DIR$/src/main/java/REST/servlets/BooksController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/User.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/BookDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/DAO.java" />
@@ -136,8 +160,10 @@
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/ContextManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/ContextManager.java" />
+        <option value="$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/REST/servlets/UserControllerTest.java" />
       </list>
     </option>
   </component>
@@ -281,6 +307,23 @@
               <item name="pl" type="462c0819:PsiDirectoryNode" />
               <item name="tau" type="462c0819:PsiDirectoryNode" />
               <item name="sosuno" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="REST" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="REST" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -596,7 +639,7 @@
       <workItem from="1558783419414" duration="5787000" />
       <workItem from="1559905446296" duration="29247000" />
       <workItem from="1559987679442" duration="28253000" />
-      <workItem from="1560074801657" duration="12725000" />
+      <workItem from="1560074801657" duration="14705000" />
     </task>
     <servers />
   </component>
@@ -633,7 +676,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76012000" />
+    <option name="totallyTimeSpent" value="77992000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,6 +689,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1874" height="1216" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -667,7 +711,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4437086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5080416" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5080416" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18798237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -713,24 +757,13 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/DAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3315">
           <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
-            <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
+            <marker date="1560092759430" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
+            <marker date="1560092759430" expanded="true" signature="3278:3294" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -972,18 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2805">
-          <caret line="195" column="0" lean-forward="false" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1560012328415" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
-            <marker date="1560012328415" expanded="true" signature="3278:3294" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/Book.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
@@ -1102,7 +1123,7 @@
         <state relative-caret-position="203">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1136,12 +1157,12 @@
         <state relative-caret-position="195">
           <caret line="369" column="0" lean-forward="false" selection-start-line="369" selection-start-column="0" selection-end-line="369" selection-end-column="0" />
           <folding>
-            <element signature="e#2922#2923#0" expanded="true" />
-            <element signature="e#2966#2967#0" expanded="true" />
-            <element signature="e#10310#10449#0" expanded="true" />
-            <element signature="e#10448#10449#0" expanded="true" />
-            <element signature="e#11040#11204#0" expanded="true" />
-            <element signature="e#11203#11204#0" expanded="true" />
+            <element signature="e#2922#2923#0" expanded="false" />
+            <element signature="e#2966#2967#0" expanded="false" />
+            <element signature="e#10310#10449#0" expanded="false" />
+            <element signature="e#10448#10449#0" expanded="false" />
+            <element signature="e#11040#11204#0" expanded="false" />
+            <element signature="e#11203#11204#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1166,7 +1187,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="132">
           <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1185,7 +1206,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="230">
           <caret line="133" column="28" lean-forward="true" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1196,26 +1217,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/ContextManager.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
+        <state relative-caret-position="187">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1723#1724#0" expanded="true" />
-            <element signature="e#1754#1755#0" expanded="true" />
+            <marker date="1560091530134" expanded="true" signature="852:922" ph="INSERT INTO USERS... " />
+            <marker date="1560091530134" expanded="true" signature="2128:2145" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/ContextManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="107" column="1" lean-forward="true" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+        <state relative-caret-position="387">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1560090993106" expanded="true" signature="852:922" ph="INSERT INTO USERS... " />
-            <marker date="1560090993106" expanded="true" signature="2128:2145" ph="DELETE FROM " />
+            <element signature="e#1676#1677#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/BookControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="189" column="65" lean-forward="true" selection-start-line="189" selection-start-column="16" selection-end-line="189" selection-end-column="65" />
+          <folding>
+            <marker date="1560092759430" expanded="true" signature="2033:2114" ph="INSERT INTO Book... " />
+            <marker date="1560092759430" expanded="true" signature="3278:3294" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/REST/servlets/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="151" column="42" lean-forward="false" selection-start-line="151" selection-start-column="42" selection-end-line="151" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1560093066045" expanded="true" signature="1625:1695" ph="INSERT INTO USERS... " />
+            <marker date="1560093066045" expanded="true" signature="2901:2918" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
