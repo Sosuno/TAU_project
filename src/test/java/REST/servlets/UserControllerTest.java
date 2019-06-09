@@ -4,9 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import pl.tau.sosuno.ContextManager;
 import pl.tau.sosuno.db.ConnectDB;
@@ -23,6 +27,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+
+
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 public class UserControllerTest {
 
 
@@ -30,12 +40,9 @@ public class UserControllerTest {
     private MockMvc mockMvc;
     private ObjectMapper objectMapper;
 
-    @MockBean
-    private ContextManager context;
-
     private User user;
     List<User> expectedDbState;
-    private long id = 1;
+
     private String username = "elpajaco";
     private String password = "myPass";
     private String email = "pajac@pajacowo.com";
@@ -73,7 +80,7 @@ public class UserControllerTest {
             }
 
             expectedDbState.add(user);
-            context = new ContextManager();
+
         }
 
     }
@@ -113,7 +120,8 @@ public class UserControllerTest {
         this.mockMvc.perform(post("/login")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(asJsonString(userToLog)))
-                .andDo(print()).andExpect(status().isUnauthorized());
+                .andDo(print())
+                .andExpect(status().isUnauthorized());
     }
 
     @Test
@@ -129,30 +137,31 @@ public class UserControllerTest {
                ;
     }
 
+
     @Test
     public void changePasswordTest() throws Exception{
         User userToLog = new User();
-        userToLog.setUsername(expectedDbState.get(0).getUsername());
+        userToLog.setUsername(expectedDbState.get(1).getUsername());
         userToLog.setPassword("changedPass");
+        userToLog.setUUID(expectedDbState.get(1).getUUID());
 
         this.mockMvc.perform(post("/update")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(asJsonString(userToLog)))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("email", is(expectedDbState.get(0).getEmail())))
-                .andExpect(jsonPath("username", is(expectedDbState.get(0).getUsername())))
-                .andExpect(jsonPath("password", is(expectedDbState.get(0).getPassword())));
+                .andExpect(jsonPath("email", is(expectedDbState.get(1).getEmail())))
+                .andExpect(jsonPath("username", is(expectedDbState.get(1).getUsername())))
+                .andExpect(jsonPath("password", is("changedPass")));
     }
 
     @Test
     public void logoutTest() throws Exception{
-        User userToLog = new User();
-        userToLog.setUsername(expectedDbState.get(0).getUsername());
-        userToLog.setPassword("changedPass");
+        User userToLogOut = expectedDbState.get(1);
+
 
         this.mockMvc.perform(post("/logout")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content(asJsonString(userToLog)))
+                .content(asJsonString(userToLogOut)))
                 .andDo(print()).andExpect(status().isOk());
     }
 
@@ -170,7 +179,6 @@ public class UserControllerTest {
                 .andExpect(jsonPath("username", is("newUser")))
                 .andExpect(jsonPath("password", is("newPass")))
                 .andExpect(jsonPath("email", is("newMail@mailing.com")));
-
     }
 
     private static String asJsonString(final Object obj) {
