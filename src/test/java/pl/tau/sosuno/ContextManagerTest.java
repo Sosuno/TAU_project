@@ -11,6 +11,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class ContextManagerTest {
@@ -23,7 +24,7 @@ public class ContextManagerTest {
     private String email = "pajac@pajacowo.com";
     private String uuid = null;
     private String uuid2 = "123";
-    private ContextManger context;
+    private ContextManager context;
 
     @Before
     public void setup() throws SQLException {
@@ -33,8 +34,8 @@ public class ContextManagerTest {
                 Statement.RETURN_GENERATED_KEYS);
 
         expectedDbState = new ArrayList<>();
-        for (int i = 0; i < 1; i++) {
-            if(i%2 ==0) {
+        for (int i = 0; i < 2; i++) {
+            if(i == 0) {
                 user = new User(username, password, email, uuid);
             }
             else {
@@ -55,6 +56,7 @@ public class ContextManagerTest {
             }
 
             expectedDbState.add(user);
+            context = new ContextManager();
         }
 
     }
@@ -70,32 +72,38 @@ public class ContextManagerTest {
     }
 
 
-    @Test(expected = Exception.class)
+    @Test
     public void failLoginTest(){
-        user = expectedDbState.get(1);
+        user = expectedDbState.get(0);
         user.setPassword("wrongPass");
-        long id = context.login(user);
-        assertNull(id);
+        User u = context.login(user);
+        assertNotNull(u);
+        assertThat(u.getId(), is(-2L));
     }
 
     @Test
     public void testLogin() {
-        user = expectedDbState.get(1);
-        long id = context.login(user);
-        assertNotNull(id);
+        user = expectedDbState.get(0);
+        User u = context.login(user);
+        assertNotNull(u);
     }
 
     @Test
     public void testLogout(){
         user = expectedDbState.get(1);
         long id = context.logout(user);
-        assertNull(id);
+        assertEquals(id, 0L);
+        user = expectedDbState.get(0);
+        id = context.logout(user);
+        assertEquals(id, -2L);
     }
 
     @Test
     public void testWrongUsernameLogin() {
-        user = expectedDbState.get(1);
-        long id = context.login(user);
-        assertNull(id);
+        user = expectedDbState.get(0);
+        user.setUsername("blabla");
+        User id = context.login(user);
+        assertNotNull(id);
+        assertThat(id.getId(), is(-1L));
     }
 }
