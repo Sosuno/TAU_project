@@ -91,7 +91,7 @@ public class UserDAO implements DAO<User> {
 
 
         try {
-            if(user1 == null) {
+            if(user1.getId() == -1L) {
                 query = con.prepareStatement("INSERT INTO Users (username,password,email,uuid) VALUES (?, ?, ?, ?)",
                         Statement.RETURN_GENERATED_KEYS);
 
@@ -167,6 +167,10 @@ public class UserDAO implements DAO<User> {
         }
         catch(Exception e){
             e.printStackTrace();
+        }
+        if(user == null){
+            user = new User();
+            user.setId(-1L);
         }
 
         return Optional.of(user);

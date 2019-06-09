@@ -21,7 +21,6 @@ public class UserDAOTest {
 
     List<User> expectedDbState;
 
-    private long id = 1;
     private String username = "elpajaco";
     private String password = "myPass";
     private String email = "pajac@pajacowo.com";
@@ -129,10 +128,11 @@ public class UserDAOTest {
         assertThat(expectedDbState.get(1), samePropertyValuesAs(user2));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void getByNonExistingUsernameTest() {
         User user = (User) userManager.getBy("username", "blabla").get();
-        assertNull(user);
+        assertNotNull(user);
+        assertEquals(user.getId(), -1L);
     }
 
     @Test
@@ -141,10 +141,11 @@ public class UserDAOTest {
         assertThat(expectedDbState.get(1), samePropertyValuesAs(user));
     }
 
-    @Test(expected = NullPointerException.class)
+    @Test
     public void getUserByNullUUIDTest() {
         User user = (User) userManager.getBy("UUID", expectedDbState.get(0).getUUID()).get();
-        assertNull(user);
+        assertNotNull(user);
+        assertEquals(user.getId(),-1L);
     }
 
 
