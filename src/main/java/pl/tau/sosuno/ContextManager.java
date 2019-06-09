@@ -67,6 +67,30 @@ public class ContextManager {
             return null;
     }
 
+    /*
+    * -1 - user does not exists
+    * -2 - empty fields
+    * -3 - user with that username exists
+    * */
+    public User registerUser(User user){
+        User u = new User();
+        u.setId(-2L);
+        if(user.getUsername() == null || user.getUsername().trim() == "") return u;
+        if(user.getPassword() == null || user.getPassword().trim() == "") return u;
+        if(user.getEmail() == null || user.getEmail().trim() == "") return u;
+
+        u = (User) userManager.getBy("username", user.getUsername()).get();
+        if (u.getId() != -1L) {
+            u.setId(-3L);
+            return u;
+        }
+        user.setUUID(UUID.randomUUID().toString());
+        Long id = userManager.save(user);
+        u = (User) userManager.get(id).get();
+
+        return u;
+    }
+
 
 
 
