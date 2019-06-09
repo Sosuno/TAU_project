@@ -21,7 +21,6 @@ public class UserDAOTest {
 
     List<User> expectedDbState;
 
-    private long id = 1;
     private String username = "elpajaco";
     private String password = "myPass";
     private String email = "pajac@pajacowo.com";

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a083d4b-d124-416c-afd3-c5dcfbd24eb8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java" afterPath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/DAO.java" afterPath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/DAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TAU_Project.iml" afterPath="$PROJECT_DIR$/TAU_Project.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java" afterPath="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,16 +19,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDAOTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserDAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+            <state relative-caret-position="391">
+              <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1560081999040" expanded="true" signature="1003:1073" ph="INSERT INTO USER... " />
-                <marker date="1560081999040" expanded="true" signature="2291:2307" ph="DELETE FROM " />
-                <marker date="1560081999040" expanded="true" signature="2291:2308" ph="DELETE FROM " />
+                <marker date="1560086978688" expanded="true" signature="978:1048" ph="INSERT INTO USER... " />
+                <marker date="1560086978688" expanded="true" signature="2266:2282" ph="DELETE FROM " />
+                <marker date="1560086978688" expanded="true" signature="2266:2283" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContextManagerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1560087056248" expanded="true" signature="1066:1136" ph="INSERT INTO USERS... " />
+                <marker date="1560087056248" expanded="true" signature="2345:2362" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -39,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1257">
-              <caret line="114" column="28" lean-forward="true" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
+              <caret line="114" column="28" lean-forward="false" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1560086344231" expanded="true" signature="494:526" ph="SELECT * FRO... Users" />
@@ -119,8 +132,9 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/DAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/BookDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java" />
       </list>
     </option>
   </component>
@@ -287,29 +301,6 @@
               <item name="pl" type="462c0819:PsiDirectoryNode" />
               <item name="tau" type="462c0819:PsiDirectoryNode" />
               <item name="sosuno" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pl" type="462c0819:PsiDirectoryNode" />
-              <item name="tau" type="462c0819:PsiDirectoryNode" />
-              <item name="sosuno" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tau_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAU_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pl" type="462c0819:PsiDirectoryNode" />
-              <item name="tau" type="462c0819:PsiDirectoryNode" />
-              <item name="sosuno" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -625,14 +616,11 @@
       <workItem from="1558783419414" duration="5787000" />
       <workItem from="1559905446296" duration="29247000" />
       <workItem from="1559987679442" duration="28253000" />
-      <workItem from="1560074801657" duration="8732000" />
+      <workItem from="1560074801657" duration="9046000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDAOTest_testInsert - 2019.06.09 at 13h 59m 21s.xml">
-      <configuration name="UserDAOTest.testInsert" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserDAOTest_testInsert - 2019.06.09 at 14h 10m 44s.xml">
       <configuration name="UserDAOTest.testInsert" configurationId="JUnit" />
     </history-entry>
@@ -660,9 +648,12 @@
     <history-entry file="UserDAOTest_testInsert - 2019.06.09 at 15h 21m 47s.xml">
       <configuration name="UserDAOTest.testInsert" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserDAOTest_testUpdate - 2019.06.09 at 15h 25m 43s.xml">
+      <configuration name="UserDAOTest.testUpdate" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72019000" />
+    <option name="totallyTimeSpent" value="72333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -679,7 +670,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -695,9 +686,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4437086" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923368" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4626301" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27530748" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18798237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -857,9 +848,9 @@
           <caret line="128" column="14" lean-forward="false" selection-start-line="128" selection-start-column="14" selection-end-line="128" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1560081999040" expanded="true" signature="1003:1073" ph="INSERT INTO USER... " />
-            <marker date="1560081999040" expanded="true" signature="2291:2307" ph="DELETE FROM " />
-            <marker date="1560081999040" expanded="true" signature="2291:2308" ph="DELETE FROM " />
+            <marker date="1560086978688" expanded="true" signature="978:1048" ph="INSERT INTO USER... " />
+            <marker date="1560086978688" expanded="true" signature="2266:2282" ph="DELETE FROM " />
+            <marker date="1560086978688" expanded="true" signature="2266:2283" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -983,6 +974,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1173,7 +1167,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/tau/sosuno/db/DAO/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1257">
-          <caret line="114" column="28" lean-forward="true" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
+          <caret line="114" column="28" lean-forward="false" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1560086344231" expanded="true" signature="494:526" ph="SELECT * FRO... Users" />
@@ -1189,15 +1183,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar!/org/junit/jupiter/api/Test.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2-sources.jar!/org/junit/jupiter/api/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/db/DAO/UserDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+        <state relative-caret-position="391">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1560081999040" expanded="true" signature="1003:1073" ph="INSERT INTO USER... " />
-            <marker date="1560081999040" expanded="true" signature="2291:2307" ph="DELETE FROM " />
-            <marker date="1560081999040" expanded="true" signature="2291:2308" ph="DELETE FROM " />
+            <marker date="1560086978688" expanded="true" signature="978:1048" ph="INSERT INTO USER... " />
+            <marker date="1560086978688" expanded="true" signature="2266:2282" ph="DELETE FROM " />
+            <marker date="1560086978688" expanded="true" signature="2266:2283" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pl/tau/sosuno/ContextManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="51" column="52" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1560087056248" expanded="true" signature="1066:1136" ph="INSERT INTO USERS... " />
+            <marker date="1560087056248" expanded="true" signature="2345:2362" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
