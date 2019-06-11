@@ -8,7 +8,7 @@ import pl.tau.sosuno.db.User;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://domain2.com", maxAge = 3600)
+@CrossOrigin(origins = "*")
 @Controller
 public class UserController {
 
@@ -24,6 +24,8 @@ public class UserController {
         u.setPassword(pass);
         u.setUsername(username);*/
         user = context.login(user);
+        System.out.println(user.toString());
+        System.out.println(user.getId());
         if(user.getId() < 0){
             throw new UserNotFoundException();
         }else {
@@ -37,7 +39,7 @@ public class UserController {
     public String logout(@RequestBody User user){
         long response = context.logout(user);
         if(response < 0){
-           throw new UserNotFoundException();
+            throw new UserNotFoundException();
         }else {
             return "ok";
         }
@@ -59,15 +61,29 @@ public class UserController {
     @ResponseStatus(code = HttpStatus.OK)
     @ResponseBody
     public User register(@RequestBody User user) {
+        User newUser = context.registerUser(user);
+        if (newUser.getId() == -2L) {
+            throw new EmptyException();
+        }
+        if (newUser.getId() == -3L){
+            throw new UsernameFoundException();
+        }
+        return user;
 
-
-        return null;
     }
 
-    @ResponseStatus(value=HttpStatus.UNAUTHORIZED, reason="No such Order")  // 401
+    @ResponseStatus(value=HttpStatus.UNAUTHORIZED, reason="No such user")  // 401
     public class UserNotFoundException extends RuntimeException {
         // ...
     }
 
+    @ResponseStatus(value=HttpStatus.NOT_ACCEPTABLE, reason="Can't register")  // 406
+    public class UsernameFoundException extends RuntimeException {
+        // ...
+    }
+    @ResponseStatus(value=HttpStatus.I_AM_A_TEAPOT, reason="Empty fields")  // 418
+    public class EmptyException extends RuntimeException {
+        // ...
+    }
 
 }

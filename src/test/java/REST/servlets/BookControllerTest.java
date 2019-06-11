@@ -47,6 +47,7 @@ public class BookControllerTest {
 
     @Before
     public void setup() throws SQLException {
+
         String[] authors = {"Neil Gaiman", "Terry Pratchett"};
         String title = "Good Omens";
         int year = 2010;

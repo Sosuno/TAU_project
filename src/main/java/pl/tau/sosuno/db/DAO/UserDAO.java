@@ -155,6 +155,7 @@ public class UserDAO implements DAO<User> {
             query = con.prepareStatement("SELECT * FROM Users Where " + column + " = ?");
 
             query.setString(1,value);
+            System.out.println(query.toString());
             rs = query.executeQuery();
             while (rs.next()) {
 

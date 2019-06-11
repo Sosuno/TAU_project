@@ -26,6 +26,7 @@ public class ContextManager {
             return u;
         }
         else if(u.getPassword().equals(user.getPassword())) {
+            System.out.println("got it");
             UUID uuid = UUID.randomUUID();
             u.setUUID(uuid.toString());
             user = (User) userManager.update(u);
@@ -64,7 +65,7 @@ public class ContextManager {
     public Book addBook() {return null;}
 
     public Book changeBook() {
-            return null;
+        return null;
     }
 
     /*
@@ -75,9 +76,9 @@ public class ContextManager {
     public User registerUser(User user){
         User u = new User();
         u.setId(-2L);
-        if(user.getUsername() == null || user.getUsername().trim() == "") return u;
-        if(user.getPassword() == null || user.getPassword().trim() == "") return u;
-        if(user.getEmail() == null || user.getEmail().trim() == "") return u;
+        if(user.getUsername() == null || user.getUsername().trim().equals("")) return u;
+        if(user.getPassword() == null || user.getPassword().trim().equals("")) return u;
+        if(user.getEmail() == null || user.getEmail().trim().equals("")) return u;
 
         u = (User) userManager.getBy("username", user.getUsername()).get();
         if (u.getId() != -1L) {
