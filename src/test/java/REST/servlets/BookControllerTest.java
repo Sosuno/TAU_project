@@ -47,7 +47,7 @@ public class BookControllerTest {
 
     @Before
     public void setup() throws SQLException {
-        ConnectDB.testing();
+
         String[] authors = {"Neil Gaiman", "Terry Pratchett"};
         String title = "Good Omens";
         int year = 2010;
@@ -89,7 +89,6 @@ public class BookControllerTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ConnectDB.done();
     }
 
     public List<String> arrToList(String[] arr) {

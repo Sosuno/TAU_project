@@ -30,7 +30,7 @@ public class BookDAOTest {
 
     @Before
     public void setup() throws SQLException {
-        ConnectDB.testing();
+
         Connection connection = ConnectDB.getCon();
         PreparedStatement addPersonStmt = connection.prepareStatement(
                 "INSERT INTO Book (title, authors, year, genres, publisher) VALUES (?, ?, ?, ?, ?)",
@@ -68,7 +68,7 @@ public class BookDAOTest {
             e.printStackTrace();
         }
 
-        ConnectDB.done();
+
     }
     @Test
     public void testGet() {
