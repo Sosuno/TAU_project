@@ -45,11 +45,18 @@ public class ContextManager {
         if(user.getUUID() == null) return 0L;
         else return -1L;
     }
+
     public User changeUser(User user) {
-        User u = (User) userManager.getBy("uuid",user.getUUID()).get();
-        u.setPassword(user.getPassword());
-        u.setEmail(user.getEmail());
-        u.setUsername(user.getUsername());
+        User u;
+        if(user.getUUID() != null) {
+            u = (User) userManager.getBy("uuid", user.getUUID()).get();
+        }else {
+            user.setId(01L);
+            return user;
+        }
+        if(!u.getPassword().equals(user.getPassword()) && user.getPassword() != null) u.setPassword(user.getPassword());
+        if(!u.getEmail().equals(user.getEmail()) && user.getEmail() != null) u.setEmail(user.getEmail());
+        if(!u.getUsername().equals(user.getUsername()) && user.getUsername() != null) u.setUsername(user.getUsername());
         user = (User) userManager.update(u);
         return user;
     }
@@ -59,6 +66,31 @@ public class ContextManager {
     public Book changeBook() {
             return null;
     }
+
+    /*
+    * -1 - user does not exists
+    * -2 - empty fields
+    * -3 - user with that username exists
+    * */
+    public User registerUser(User user){
+        User u = new User();
+        u.setId(-2L);
+        if(user.getUsername() == null || user.getUsername().trim() == "") return u;
+        if(user.getPassword() == null || user.getPassword().trim() == "") return u;
+        if(user.getEmail() == null || user.getEmail().trim() == "") return u;
+
+        u = (User) userManager.getBy("username", user.getUsername()).get();
+        if (u.getId() != -1L) {
+            u.setId(-3L);
+            return u;
+        }
+        user.setUUID(UUID.randomUUID().toString());
+        Long id = userManager.save(user);
+        u = (User) userManager.get(id).get();
+
+        return u;
+    }
+
 
 
 

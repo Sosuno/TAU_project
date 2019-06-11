@@ -14,6 +14,8 @@ import pl.tau.sosuno.db.DAO.BookDAO;
 
 import java.util.List;
 
+
+@CrossOrigin(origins = "http://domain2.com", maxAge = 3600)
 @Controller
 public class BooksController {
 
@@ -38,6 +40,8 @@ public class BooksController {
     public List<Book> getSomeBooks(@PathVariable("int") int i) {
         return service.getSome(i);
     }
+
+
     @RequestMapping(value = "/book/{int}", method = RequestMethod.DELETE)
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)

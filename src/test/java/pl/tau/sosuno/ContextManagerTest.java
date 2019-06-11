@@ -1,6 +1,7 @@
 package pl.tau.sosuno;
 
 
+import org.hamcrest.beans.SamePropertyValuesAs;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.beans.SamePropertyValuesAs.samePropertyValuesAs;
 import static org.junit.Assert.*;
 
 public class ContextManagerTest {
@@ -105,5 +107,29 @@ public class ContextManagerTest {
         User id = context.login(user);
         assertNotNull(id);
         assertThat(id.getId(), is(-1L));
+    }
+    @Test
+    public void testChangePassword() {
+        user = expectedDbState.get(1);
+        user.setPassword("newPass");
+        User u = context.changeUser(user);
+        assertThat(u, samePropertyValuesAs(user));
+
+    }
+
+    @Test
+    public void createNewUserTest(){
+        User u = new User();
+        u.setUsername("newUser");
+        u.setPassword("newPass");
+        u.setEmail("newMail@mailin.com");
+
+        User newUser = context.registerUser(u);
+
+        assertEquals(newUser.getUsername(),"newUser");
+        assertEquals(newUser.getPassword(),"newPass");
+        assertEquals(newUser.getEmail(),"newMail@mailin.com");
+        assertNotNull(newUser.getId());
+        assertNotNull(newUser.getUUID());
     }
 }
