@@ -30,6 +30,7 @@ public class UserDAOTest {
 
     @Before
     public void setup() throws SQLException {
+        ConnectDB.testing();
         Connection connection = ConnectDB.getCon();
         PreparedStatement query = connection.prepareStatement(
                 "INSERT INTO USERS (username, password,email, uuid) VALUES (?, ?, ?, ?)",
@@ -71,6 +72,7 @@ public class UserDAOTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        ConnectDB.done();
     }
 
     @Test

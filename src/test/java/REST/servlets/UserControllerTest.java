@@ -52,6 +52,7 @@ public class UserControllerTest {
 
     @Before
     public void setup() throws SQLException {
+        ConnectDB.testing();
         Connection connection = ConnectDB.getCon();
         PreparedStatement query = connection.prepareStatement(
                 "INSERT INTO USERS (username, password,email, uuid) VALUES (?, ?, ?, ?)",
@@ -93,6 +94,7 @@ public class UserControllerTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        ConnectDB.done();
     }
 
     @Test
@@ -108,7 +110,7 @@ public class UserControllerTest {
                 .andExpect(jsonPath("email", is(expectedDbState.get(0).getEmail())))
                 .andExpect(jsonPath("username", is(expectedDbState.get(0).getUsername())))
                 .andExpect(jsonPath("password", is(expectedDbState.get(0).getPassword())))
-                ;
+        ;
     }
 
     @Test
@@ -134,7 +136,7 @@ public class UserControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(asJsonString(userToLog)))
                 .andDo(print()).andExpect(status().isUnauthorized())
-               ;
+        ;
     }
 
 
@@ -166,7 +168,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void register() throws Exception{
+    public void registerTest() throws Exception{
         User userToCreate = new User();
         userToCreate.setUsername("newUser");
         userToCreate.setPassword("newPass");
@@ -179,6 +181,33 @@ public class UserControllerTest {
                 .andExpect(jsonPath("username", is("newUser")))
                 .andExpect(jsonPath("password", is("newPass")))
                 .andExpect(jsonPath("email", is("newMail@mailing.com")));
+    }
+
+    @Test
+    public void registerWithEmptyFieldsTest() throws Exception{
+        User userToCreate = new User();
+        userToCreate.setUsername("newUser");
+        userToCreate.setPassword("newPass");
+        userToCreate.setEmail("             ");
+
+        this.mockMvc.perform(post("/register")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(asJsonString(userToCreate)))
+                .andDo(print()).andExpect(status().isIAmATeapot());
+    }
+
+    @Test
+    public void registerWithExistingUsernameTest() throws Exception{
+        User userToCreate = new User();
+        userToCreate.setUsername("elpajaco");
+        userToCreate.setPassword("newPass");
+        userToCreate.setEmail("newMail@mailing.com");
+
+        this.mockMvc.perform(post("/register")
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .content(asJsonString(userToCreate)))
+                .andDo(print()).andExpect(status().isNotAcceptable());
+
     }
 
     private static String asJsonString(final Object obj) {
